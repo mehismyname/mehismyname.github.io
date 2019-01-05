@@ -18,7 +18,25 @@
    padding:200px;
   }
  </style>
- <script>alert ('Mwa ha ha ha ha I hacked this LOL You now have a virus. JK');</script>
+ <script>
+    
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function myalert() {
+ //THINGS THAT HAPPEN BEFORE THE PAUSE
+ alert ('Mwa ha ha ha ha I hacked this LOL You now have a virus. JK');
+ 
+ await sleep(2000);
+ 
+ //THINGS THAT HAPPEN AFTER THE PAUSE
+ alert ('JK means Just Kidding');
+}
+
+myalert();
+ 
+ </script>
 </head>
  <body >
  <h1 style="color: lightblue">New Game Coming Soon</h1>
