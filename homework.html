@@ -1,141 +1,142 @@
 <html>
 <head>
     <style>
-        div.black {
-            background-color: black;
-        }
+        body, html {
+    background-color: #f6f6f6;
+}
 
-        div.yellow {
-            background-color: yellow;
-        }
+#painting {
+  height: 400px;
+  width: 400px;
+  background: #fff4db;    
+  margin-top: 30px;
+  margin: auto;
+  box-shadow: 10px 10px 0px #8d8d8d;
+}
 
-        div.Lblue {
-            background-color: lightblue;
-        }
 
-        div.Red {
-            background-color: red;
-        }
 
-        .Right {
-            float: right;
-        }
+#top-row {
+  height: 290px;
+}
 
-        div.outer {
-            height: 700px;
-            width: 960px;
-        }
+#big-box {
+  width: 290px;
+  height: 290px;
+}
 
-        div.IL1 {
-            height: 300px;
-            width: 460px;
-        }
+#bottom-left-box {
+  width: 100px;
+  height: 100px;
+}
 
-        div.IR2 {
-            height: 360px;
-            width: 460px;
-        }
+#bottom-right-column {
+  height: 100px;
+  width: 40px;
+}
 
-        div.IL2 {
-            height: 360px;
-            width: 460px;
-        }
+#bottom-middle-box {
+  height: 100px;
+  width: 240px;
+}
 
-        div.IR1 {
-            height: 300px;
-            width: 460px;
-        }
 
-        div.divide1 {
-            height: 300px;
-            width: 40px;
-        }
 
-        div.divide2 {
-            height: 360px;
-            width: 40px;
-        }
+#divider-1 {
+  height: 290px;
+  width: 10px;
+}
 
-        div.divideM {
-            height: 40px;
-            width: 960px;
-        }
+#divider-2 {
+  height: 10px;
+  width: 100px;
+}
 
-        div {
-            border: 0px solid lightgreen;
-            background-color: black;
+#divider-3 {
+  height: 10px;
+  width: 400px;
+}
 
-        }
+#divider-4 {
+  height: 100px;
+  width: 10px;
+}
 
-        #top-row {
-            height:34%;
-        }
-        #top-row div {
-            height: 100%;
-        }
+#divider-5 {
+  height: 10px;
+  width: 50px;
+}
+
+#divider-6 {
+  height: 100px;
+  width: 10px;
+}
+
+
+
+.right {
+  float: right;
+}
+
+.medium-box {
+  width: 100px;
+  height: 140px;
+}
+
+.small-box {
+  width: 50px;
+  height: 45px;
+}
+
+
+
+
+.red {
+  background-color: red;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+.black {
+  background-color: black;
+}
+
     </style>
 </head>
 <body>
 
-<div>
-    <!-- Row 1 -->
-    <div id="top-row">
-        <div class="yellow Right" style=" width: 50%;">
-
+<div id="painting">
+      
+      <div id="top-row">
+        <div id="big-box" class="red right"></div>
+        <div id="divider-1" class="black right"></div>
+        <div id="top-left-column" class="right">
+          <div class="medium-box"></div>
+          <div id="divider-2" class="black"></div>
+          <div class="medium-box"></div>
         </div>
-        <div class="Right black " style=" width: 2%;">
-
+      </div>
+      
+      <div class="black right" id="divider-3" ></div>
+      <div id="bottom-row">
+        <div id="bottom-right-column" class="right">
+          <div class="small-box blue right"></div>
+          <div id="divider-5" class="black right"></div>
+          <div class="small-box yellow right"></div>
         </div>
-        <div class="right Lblue" style=" width: 10%;">
-        </div>
-        <div>
-
-        </div>
-        <div>
-
-        </div>
+        <div id="divider-6" class="right black"></div>
+        
+        <div id="bottom-middle-box" class="right"></div>
+        <div id="divider-4" class="black right"></div>
+        <div id="bottom-left-box" class="blue right"></div>
+      </div>
     </div>
-    <!-- White row -->
-    <div>
-    </div>
-    <div>
-        <div>
 
-        </div>
-        <div>
-
-        </div>
-        <div>
-
-        </div>
-        <div>
-
-        </div>
-        <div>
-
-        </div>
-    </div>
-    <!-- Row 3 -->
-    <div>
-        <div>
-
-        </div>
-        <div>
-
-        </div>
-        <div>
-
-        </div>
-        <div>
-
-        </div>
-        <div>
-
-        </div>
-
-    </div>
-</div>
-
-</div>
 </body>
 </html>
