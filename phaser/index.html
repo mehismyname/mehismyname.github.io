@@ -62,9 +62,8 @@
     {
         this.physics.pause();
 
-        player.setTint(0xff0000);
-
-        player.anims.play('turn');
+        player.visible = true;
+        player.anims.play('Xturn');
 
         gameOver = true;
     }
@@ -73,6 +72,7 @@
 
     function preload ()
     {
+
         this.load.image('sky', 'assets/sky.png');
         this.load.image('ground', 'assets/platform.png');
         this.load.image('star', 'assets/star.png');
@@ -81,6 +81,13 @@
             'assets/dude.png',
             { frameWidth: 32, frameHeight: 32 }
         );
+        this.load.spritesheet('Xdude',
+        'assets/tiny_skelly.png',
+            { frameWidth: 48, frameHeight:60}
+        );
+
+
+
         this.load.audio('theme', [
             'assets/bensound-summer.mp3',
             'assets/bensound-retrosoul.mp3'
@@ -149,6 +156,27 @@
             frameRate: 10,
             repeat: -1
         });
+
+        this.anims.create({
+            key: 'Xleft',
+            frames: this.anims.generateFrameNumbers('Xdude', { start: 9, end: 11 }),
+            frameRate: 10,
+            repeat: -1
+        });
+
+        this.anims.create({
+            key: 'Xturn',
+            frames: this.anims.generateFrameNumbers ('Xdude', { start: 6, end: 8 }),
+            frameRate: 20,
+        });
+
+        this.anims.create({
+            key: 'Xright',
+            frames: this.anims.generateFrameNumbers('Xdude', { start: 3, end: 5 }),
+            frameRate: 10,
+            repeat: -1
+        });
+
         cursors = this.input.keyboard.createCursorKeys();
     }
 
