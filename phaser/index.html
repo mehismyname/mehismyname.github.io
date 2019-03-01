@@ -36,7 +36,7 @@
             bomb.setBounce(1.01);
             bomb.setCollideWorldBounds(true);
             bomb.setVelocity(Phaser.Math.Between(-200, 200), 20);
-            bomb.setScale(0.5).refreshBody();
+            bomb.setScale(0.5);
         }
     }
 
@@ -62,46 +62,62 @@
     {
         this.physics.pause();
 
-        player.visible = true;
-        player.anims.play('Xturn');
+        this.load.audio('oof', [
+            'assets/oof.mp3',
+        ]);
 
+
+        player.visible = null;
+        //player.anims.play('Xturn');
+        this.add.sprite(player.x, player.y,'Xdude' ),
         gameOver = true;
+
+        var oof = this.sound.add('oof');
+
+        for (var i = 0; i < 100; i++) {
+            setTimeout(function() { oof.play(); }, 1000);
+        }
+
+
+
     }
 
     var game = new Phaser.Game(config);
 
-    function preload ()
-    {
-
+    function preload () {
         this.load.image('sky', 'assets/sky.png');
         this.load.image('ground', 'assets/platform.png');
         this.load.image('star', 'assets/star.png');
         this.load.image('bomb', 'assets/bomb.png');
         this.load.spritesheet('dude',
             'assets/dude.png',
-            { frameWidth: 32, frameHeight: 32 }
+            {frameWidth: 32, frameHeight: 32}
         );
         this.load.spritesheet('Xdude',
-        'assets/tiny_skelly.png',
-            { frameWidth: 48, frameHeight:60}
+            'assets/tiny_skelly.png',
+            {frameWidth: 48, frameHeight: 60}
         );
 
+        this.load.audio('oof', [
+            'assets/oof.mp3',
+        ]);
 
 
         this.load.audio('theme', [
             'assets/bensound-summer.mp3',
             'assets/bensound-retrosoul.mp3'
-        ]);}
-
+        ]);
+    }
 
     function create ()
     {
 
 
-        var music = this.sound.add('theme');
-
-        music.play();
+        // var music = this.sound.add('theme');
+        // music.play();
         this.add.image(400, 300, 'sky');
+
+        this.add.sprite(0, -400,'Xdude' );
         stars = this.physics.add.group({
             key: 'star',
             repeat: 11,
