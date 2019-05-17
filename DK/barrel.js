@@ -25,11 +25,13 @@ var BarrelScene = new Phaser.Class({
 
 
             alert("You died");
-            alert("Reload site to play again");
+            alert("Reloading site so you can play again");
 
             gameOver = true;
-
-            this.physics.pause();
+            
+            location.reload();
+            
+            
         }
 
 
