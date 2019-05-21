@@ -51,7 +51,7 @@ var BarrelScene = new Phaser.Class({
         this.tweens.add({
             targets: this.player,
             x:650,
-            duration:230,
+            duration:340,
             ease:'Expo.InOut',
             repeat:-1,
             yoyo:true,
