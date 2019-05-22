@@ -44,14 +44,18 @@ var BarrelScene = new Phaser.Class({
 
 
             alert("You Win!!");
-            alert("Restart to try again")
+            alert("Restarting so you can win again")
+            
+            location.reload();
+ 
+            
         }
 
 
         this.tweens.add({
             targets: this.player,
             x:650,
-            duration:340,
+            duration:390,
             ease:'Expo.InOut',
             repeat:-1,
             yoyo:true,
