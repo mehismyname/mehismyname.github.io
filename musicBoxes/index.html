@@ -9,8 +9,10 @@
 <style>
 
 
-.box { width: 150; height: 150; margin: 8px; float: right;}
+.box { width: 150; height: 150; margin: 8px; float: right; cursor: wait;}
 
+#why {background-color: black; border: 2px solid black; }
+#no {background-color: black; border: 2px solid black; }
 #c {background-color: orange; border: 2px solid black; }
 #d {background-color: teal; border: 2px solid black;}
 #e {background-color: maroon; border: 2px solid black;}
@@ -18,16 +20,75 @@
 #g {background-color: mediumaquamarine; border: 2px solid black;}
 #a {background-color: rgb(255, 102, 13); border: 2px solid black;}
 #b {background-color: rgb(71, 97, 167); border: 2px solid black;}
+#f:hover {
+    background-color:rgb(165, 14, 165);
+ border:2px solid black;
+ }
+
+ #f:active {
+    background-color:rgb(218, 27, 218);
+ border:2px solid black;
+ }
+
+ body{
+     cursor: not-allowed;
+ }
 
 </style>
 <script>
 alert('Press the boxes to play music');
 
 $(document).ready(function(){
-$('#c').mousedown(function(){
 
-alert('Clicked!')
 
+
+    $('#c').mousedown(function(){
+
+var cNote =document.getElementById('cAudio');
+cNote.currentTime= 0;
+cNote.play();
+});
+
+$('#a').mousedown(function(){
+
+var aNote =document.getElementById('aAudio');
+aNote.currentTime= 0;
+aNote.play();
+});
+
+$('#b').mousedown(function(){
+
+var bNote =document.getElementById('bAudio');
+bNote.currentTime= 0;
+bNote.play();
+});
+
+$('#d').mousedown(function(){
+
+var dNote =document.getElementById('dAudio');
+dNote.currentTime= 0;
+dNote.play();
+});
+
+$('#e').mousedown(function(){
+
+var eNote =document.getElementById('eAudio');
+eNote.currentTime= 0;
+eNote.play();
+});
+
+$('#f').mousedown(function(){
+
+var fNote =document.getElementById('fAudio');
+fNote.currentTime= 0;
+fNote.play();
+});
+
+$('#g').mousedown(function(){
+
+var gNote =document.getElementById('gAudio');
+gNote.currentTime= 0;
+gNote.play();
 });
 
 
@@ -51,23 +112,55 @@ alert('Clicked!')
 <div class="box" id="g"></div>
 <div class="box" id="a"></div>
 <div class="box" id="b"></div>
+<br>
+<h1>Do not use</h1>
+<br>
+<br>
+<br>
+<div class="box" id="why"></div>
+<div class="box" id="no"></div>
 
+<audio id="cAudio" > 
+<source src="media/c_note.mp3" type="audio/mpeg"></source>
+ <source src="media/c_note.mp3" type="audio/ogg"></source>
+<source src="media/c_note.mp3" type="audio/wav"></source>
+</audio>
 
+<audio id="aAudio">
+<source src="media/a_note.mp3" type="audio/mpeg"></source>
+ <source src="media/a_note.mp3" type="audio/ogg"></source>
+<source src="media/a_note.mp3" type="audio/wav"></source>
+</audio>
 
+<audio id="bAudio">
+<source src="media/b_note.mp3" type="audio/mpeg"></source>
+ <source src="media/b_note.mp3" type="audio/ogg"></source>
+<source src="media/b_note.mp3" type="audio/wav"></source>
+</audio>
 
+<audio id="dAudio">
+<source src="media/d_note.mp3" type="audio/mpeg"></source>
+ <source src="media/d_note.mp3" type="audio/ogg"></source>
+<source src="media/d_note.mp3" type="audio/wav"></source>
+</audio>
 
+<audio id="eAudio">
+<source src="media/e_note.mp3" type="audio/mpeg"></source>
+ <source src="media/e_note.mp3" type="audio/ogg"></source>
+<source src="media/e_note.mp3" type="audio/wav"></source>
+</audio>
 
+<audio id="fAudio">
+<source src="media/f_note.mp3" type="audio/mpeg"></source>
+ <source src="media/f_note.mp3" type="audio/ogg"></source>
+<source src="media/f_note.mp3" type="audio/wav"></source>
+</audio>
 
-
-
-
-
-
-
-
-
-
-
+<audio id="gAudio">
+<source src="media/g_note.mp3" type="audio/mpeg"></source>
+ <source src="media/g_note.mp3" type="audio/ogg"></source>
+<source src="media/g_note.mp3" type="audio/wav"></source>
+</audio>
 
 
 
