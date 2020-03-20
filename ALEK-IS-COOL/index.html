@@ -4,54 +4,61 @@
     <meta charset="UTF-8">
     <title>Get the blocks</title>
     <style>
+        .scoreText { position: fixed;}
     .box { width: 100px; height: 100px; margin: 8px; cursor: wait;  border: 30px; border-color: rgb(12, 12, 92); position: fixed;}
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" ></script>
     <script>
-        function myFunction() {
-          var number = "0";
-          document.getElementById("myText").innerHTML = number;
-        }
-        var y = "1";
-    </script>
-    <script>
-      
+    var score = 0;
+    function count(){
+        score = score + 1;
+        console.log(score);
+        $("#score").html(score);
+    }; 
+    alert('Welcome');
     $(document).ready(function() {
 
         $('#c').mousedown(function() {
             $('#wow')[0].play();
-            $('#c').animate({left: "5px;", top: "139px"}, 200);
+            $('#c').animate({left: Math.random()*1000, top: Math.random()*1000}, 200);
             console.count("clicks");
+            count();
         });
         $('#a').mousedown(function() {
             $('#anote')[0].play();
-            $('#a').animate({left: "700px", bottom: "200px"}, 505)
+            $('#a').animate({left: Math.random()*1000, bottom: Math.random()*1000}, 505)
             console.count("clicks");
+            count();
         });
         $('#b').mousedown(function() {
             $('#bnote')[0].play();
-            $('#b').animate({left: "1080px", top: "620px" }, 900)
+            $('#b').animate({left: Math.random()*1000, top: Math.random()*1000 }, 900)
             console.count("clicks");
+            count();
         });
         $('#d').mousedown(function() {
             $('#error')[0].play();
-            $('#d').animate({left: "1000px", bottom: "50px"}, 1200)
+            $('#d').animate({left: Math.random()*1000, bottom: Math.random()*1000}, 1200)
             console.count("clicks");
+            count();
         });
         $('#e').mousedown(function() {
             $('#enote')[0].play();
-            $('#e').animate({left: "500px", top: "500px"}, 'fast')
+            $('#e').animate({left: Math.random()*1000, top: Math.random()*1000}, 'fast')
             console.count("clicks");
+            count();
         });
         $('#f').mousedown(function() {
             $('#fnote')[0].play();
-            $('#f').animate({left: "1200px", bottom: "600px"}, 250)
+            $('#f').animate({left: Math.random()*1000, bottom: Math.random()*1000}, 250)
             console.count("clicks");
+            count();
         });
         $('#g').mousedown(function() {
             $('#gnote')[0].play();
-            $('#g').animate({left: "420px", top: "690px"}, 600)
+            $('#g').animate({left: Math.random()*1000, top: Math.random()*1000}, 600)
             console.count("clicks");
+            count();
         });
     
     
@@ -63,7 +70,7 @@
     
     </script>
 </head>
-<body onload="myFunction()>
+<body>
  
     <audio id="wow">
         <source src="assets/wow2.mp3" type="audio/mp3">
@@ -115,10 +122,8 @@
 <div class="box" id="f" style="background-color:darkmagenta; left: 220px;">
 </div>
 <div class="box" id="g" style="background-color:aqua; left: 110px;">
-
-    
 </div>
 </div>
-<h1>Click Count:  <span id="myText"></span></h1>
+<h1 class="scoreText" style=" top: 139px;">Score:<span id="score">LMAO you have nothing loser</span></h1>
 </body>
 </html>
