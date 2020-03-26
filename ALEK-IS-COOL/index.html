@@ -5,9 +5,34 @@
     <title>Get the blocks</title>
     <style>
         .scoreText { position: fixed;}
-    .box { width: 100px; height: 100px; margin: 8px; cursor: wait;  border: 30px; border-color: rgb(12, 12, 92); position: fixed;}
+    .box { width: 100px; height: 100px; margin: 8px; cursor: grab;  border: 30px; border-color: rgb(12, 12, 92); position: fixed;}
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" ></script>
+    <script>
+    function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+        };
+    
+    async function move(){
+    
+        await sleep(5000);
+
+    for (var i=1; i<Infinity; i++) {
+
+        $('#a').animate({left: Math.random()*1000, top: Math.random()*1000}, 700);
+        $('#b').animate({left: Math.random()*1000, top: Math.random()*1000}, 700);
+        $('#c').animate({left: Math.random()*1000, top: Math.random()*1000}, 700);
+        $('#d').animate({left: Math.random()*1000, top: Math.random()*1000}, 700);
+        $('#e').animate({left: Math.random()*1000, top: Math.random()*1000}, 700);
+        $('#f').animate({left: Math.random()*1000, top: Math.random()*1000}, 700);
+        $('#g').animate({left: Math.random()*1000, top: Math.random()*1000}, 700);
+
+        await sleep(300);
+
+    };
+    };
+    move();
+   </script>
     <script>
 
     var score = 0;
@@ -21,48 +46,39 @@
 
         $('#c').mousedown(function() {
             $('#wow')[0].play();
-            $('#c').animate({left: Math.random()*1000, top: Math.random()*1000}, Math.random()*1000);
             console.count("clicks");
             count();
         });
         $('#a').mousedown(function() {
             $('#anote')[0].play();
-            $('#a').animate({left: Math.random()*1000, bottom: Math.random()*1000}, Math.random()*1500)
             console.count("clicks");
             count();
         });
         $('#b').mousedown(function() {
             $('#bnote')[0].play();
-            $('#b').animate({left: Math.random()*1000, top: Math.random()*1000 }, Math.random()*1000)
             console.count("clicks");
             count();
         });
         $('#d').mousedown(function() {
             $('#error')[0].play();
-            $('#d').animate({left: Math.random()*1000, bottom: Math.random()*1000}, Math.random()*1300)
             console.count("clicks");
             count();
         });
         $('#e').mousedown(function() {
             $('#enote')[0].play();
-            $('#e').animate({left: Math.random()*1000, top: Math.random()*1000}, Math.random()*1000)
             console.count("clicks");
             count();
         });
         $('#f').mousedown(function() {
             $('#fnote')[0].play();
-            $('#f').animate({left: Math.random()*1000, bottom: Math.random()*1000}, Math.random()*1002)
             console.count("clicks");
             count();
         });
         $('#g').mousedown(function() {
             $('#gnote')[0].play();
-            $('#g').animate({left: Math.random()*1000, top: Math.random()*1000}, Math.random()*1000)
             console.count("clicks");
             count();
         });
-    
-    
     
     
     });
@@ -125,6 +141,6 @@
 <div class="box" id="g" style="background-color:aqua; left: 110px;">
 </div>
 </div>
-<h1 class="scoreText" style=" top: 139px;">Score:<span id="score">LMAO you have nothing loser</span></h1>
+<h1 class="scoreText" style=" top: 139px;">Score:<span id="score">LMAO you have nothing loser (PS your supposed to click the boxes when they start to move)</span></h1>
 </body>
 </html>
