@@ -5,7 +5,16 @@
     <title>Get the blocks</title>
     <style>
         .scoreText { position: fixed;}
-    .box { width: 100px; height: 100px; margin: 8px; cursor: grab;  border: 30px; border-color: rgb(12, 12, 92); position: fixed;}
+        .box { width: 100px; height: 100px; margin: 8px; cursor: grab;  border: 30px; border-color: rgb(12, 12, 92); position: fixed;}
+        body{
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            background-color: forestgreen;
+        }
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" ></script>
     <script>
@@ -15,20 +24,24 @@
     
     async function move(){
     
-        await sleep(5000);
+        await sleep(2500);
 
-    for (var i=1; i<Infinity; i++) {
+        while (true) {
 
-        $('#a').animate({left: Math.random()*1000, top: Math.random()*1000}, 700);
-        $('#b').animate({left: Math.random()*1000, top: Math.random()*1000}, 700);
-        $('#c').animate({left: Math.random()*1000, top: Math.random()*1000}, 700);
-        $('#d').animate({left: Math.random()*1000, top: Math.random()*1000}, 700);
-        $('#e').animate({left: Math.random()*1000, top: Math.random()*1000}, 700);
-        $('#f').animate({left: Math.random()*1000, top: Math.random()*1000}, 700);
-        $('#g').animate({left: Math.random()*1000, top: Math.random()*1000}, 700);
+        $('#a').animate({left: Math.random()*window.innerWidth, top: Math.random()*window.innerHeight}, 700);
+        $('#b').animate({left: Math.random()*window.innerWidth, top: Math.random()*window.innerHeight}, 800);
+        $('#c').animate({left: Math.random()*window.innerWidth, top: Math.random()*window.innerHeight}, 900);
+        $('#d').animate({left: Math.random()*window.innerWidth, top: Math.random()*window.innerHeight}, 870);
+        $('#e').animate({left: Math.random()*window.innerWidth, top: Math.random()*window.innerHeight}, 760);
+        $('#f').animate({left: Math.random()*window.innerWidth, top: Math.random()*window.innerHeight}, 853);
+        $('#g').animate({left: Math.random()*window.innerWidth, top: Math.random()*window.innerHeight}, 670);
 
         await sleep(300);
-
+        
+        if (score==100){
+        alert('You win');
+        location.reload();
+    };
     };
     };
     move();
@@ -88,7 +101,19 @@
     </script>
 </head>
 <body>
- 
+
+    <audio id="bmusic">
+        <source src="assets/bmusic.mp3" type="audio/mp3">
+    </audio>
+    <script>
+        async function musicb{
+        while (true) {
+            $('#bmusic')[0].play();
+            await sleep(217000);
+        };
+
+    };
+    </script>
     <audio id="wow">
         <source src="assets/wow2.mp3" type="audio/mp3">
         Your browser does not support the audio element.
