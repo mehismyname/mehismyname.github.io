@@ -13,6 +13,20 @@
     var scoreText;
     var boxes;
     var tween;
+    var url = 'https://webhooks.mongodb-stitch.com/api/client/v2.0/app/stack-attack-sllve/service/High-Scores/incoming_webhook/webhook0';
+
+    fetch(url).then(function(response) {
+        return response.json();
+    }).then(function(json) {
+        var scores = '';
+        console.log(json);
+        for (let row of json) {
+            console.log(row);
+            scores += row['Name'] + ': ' + row['Score'];
+        }
+        alert(scores);
+    });
+
     function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
     };
