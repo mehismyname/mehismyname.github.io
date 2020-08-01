@@ -43,13 +43,13 @@ var BarrelScene = new Phaser.Class({
 
         function win () {
 
-
+            if(EndGameReload){
             alert("You Win!!");
             alert("Restarting so you can win again")
-            
+            EndGameReload = false;
             location.reload();
  
-            
+        }
         }
 
 
