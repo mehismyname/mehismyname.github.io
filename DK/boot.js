@@ -19,7 +19,7 @@ var BootScene = new Phaser.Class({
         this.input.on('pointerdown', function () {
             alert("By, Kent Smith");
             this.scene.start('BarrelScene');
-            alert("Sub 2 Pewdiepie SORRY I PUT THAT THERE BEFORE HE ENDED THE MEME");
+            alert("FOR THE BOYS");
         }, this);
     }
 
