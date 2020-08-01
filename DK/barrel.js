@@ -37,7 +37,6 @@ var BarrelScene = new Phaser.Class({
 
         
         
-        scene.physics.add.collider(scene.Hero, scene.barrel, hitBomb, null, this);
         
         
         
