@@ -1,6 +1,7 @@
 var BarrelScene = new Phaser.Class({
     Extends: Phaser.Scene,
-
+src ="https://cdn.jsdelivr.net/npm/phaser@3.22.0/dist/phaser.min.js";
+    
     platform: null,
     BigDDDD: null,
 
@@ -19,7 +20,7 @@ var BarrelScene = new Phaser.Class({
 
     create: function () {
 
-
+        var EndGameReload= true;
         function hitBomb (Hero, barrel)
         {
 
@@ -35,7 +36,25 @@ var BarrelScene = new Phaser.Class({
             
         }
 
-
+        function BombBomb (barrel, barrel)
+        {
+         function(event, thingA, thingB){
+           thingB.gameObject.destroy(); 
+           thingA.gameObject.destroy(); 
+             
+             
+         }   
+            
+        }
+        
+        scene.physics.add.collider(scene.Hero, scene.barrel, hitBomb, null, this);
+        
+        
+        
+        
+        }
+        
+        
         console.log('You found a easter egg!');
         this.cursors = this.input.keyboard.createCursorKeys();
         this.Hero = this.physics.add.sprite(500, 390, 'BigH').setScale(0.1);
@@ -69,6 +88,7 @@ var BarrelScene = new Phaser.Class({
             scene.barrel.body.velocity.x=-250;
             scene.barrel.body.bounce.set(1,0);
             scene.physics.add.collider(scene.Hero, scene.barrel, hitBomb, null, this);
+            scene.physics.add.collider(scene.barrel, scene.barrel, BombBomb, null, this);
             scene.barrel.setCollideWorldBounds(true);
             scene.physics.add.collider(scene.platforms, scene.barrel);
         }
