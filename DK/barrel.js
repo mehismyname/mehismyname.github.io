@@ -1,6 +1,5 @@
 var BarrelScene = new Phaser.Class({
     Extends: Phaser.Scene,
-src ="https://cdn.jsdelivr.net/npm/phaser@3.22.0/dist/phaser.min.js";
     
     platform: null,
     BigDDDD: null,
