@@ -35,16 +35,7 @@ var BarrelScene = new Phaser.Class({
             
         }
 
-        function BombBomb (barrel, barrel)
-        {
-         function(event, thingA, thingB){
-           thingB.gameObject.destroy(); 
-           thingA.gameObject.destroy(); 
-             
-             
-         }   
-            
-        }
+        
         
         scene.physics.add.collider(scene.Hero, scene.barrel, hitBomb, null, this);
         
@@ -87,7 +78,6 @@ var BarrelScene = new Phaser.Class({
             scene.barrel.body.velocity.x=-250;
             scene.barrel.body.bounce.set(1,0);
             scene.physics.add.collider(scene.Hero, scene.barrel, hitBomb, null, this);
-            scene.physics.add.collider(scene.barrel, scene.barrel, BombBomb, null, this);
             scene.barrel.setCollideWorldBounds(true);
             scene.physics.add.collider(scene.platforms, scene.barrel);
         }
