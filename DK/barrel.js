@@ -23,14 +23,15 @@ var BarrelScene = new Phaser.Class({
         function hitBomb (Hero, barrel)
         {
 
-
+            if (EndGameReload){
             alert("You died");
             alert("Reloading site so you can play again");
 
+            EndGameReload = false;
             gameOver = true;
             
             location.reload();
-            
+            }
             
         }
 
