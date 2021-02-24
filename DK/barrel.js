@@ -41,7 +41,7 @@ var BarrelScene = new Phaser.Class({
         
         
         
-        }
+        
         
         
         console.log('You found a easter egg!');
@@ -59,7 +59,7 @@ var BarrelScene = new Phaser.Class({
  
         }
         }
-
+        
 
         this.tweens.add({
             targets: this.player,
